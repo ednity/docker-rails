@@ -26,3 +26,7 @@ ENV LANG C.UTF-8
 EXPOSE 3000
 
 WORKDIR /app
+
+ONBUILD COPY Gemfile /app/
+ONBUILD COPY Gemfile.lock /app/
+ONBUILD RUN bundle install
